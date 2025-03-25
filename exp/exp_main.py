@@ -1,8 +1,8 @@
-from data_provider.data_factory import data_provider
-from exp.exp_basic import Exp_Basic
-from models import Informer, Autoformer, Transformer, Reformer, Graph_WaveNet, LSTNet, MTGNN
-from utils.tools import EarlyStopping, adjust_learning_rate, visual
-from utils.metrics import metric
+from formers.data_provider.data_factory import data_provider
+from formers.exp.exp_basic import Exp_Basic
+from formers.models import Informer, Autoformer, Transformer, Reformer, Graph_WaveNet, LSTNet, MTGNN
+from formers.utils.tools import EarlyStopping, adjust_learning_rate, visual
+from formers.utils.metrics import metric
 
 import numpy as np
 import torch
@@ -199,7 +199,8 @@ class Exp_Main(Exp_Basic):
 
         preds = []
         trues = []
-        folder_path = './test_results/' + setting + '/'
+        # folder_path = './test_results/' + setting + '/'
+        folder_path = '/kaggle/working/formers/results/' + setting +'/'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
@@ -254,15 +255,16 @@ class Exp_Main(Exp_Basic):
         print('test shape:', preds.shape, trues.shape)
 
         # result save
-        folder_path = './results/' + setting + '/'
+        # folder_path = './results/' + setting + '/'
+        folder_path = '/kaggle/working/formers/results/' + setting +'/'
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
         mae, mse, rmse, mape, mspe = metric(preds, trues)
-        print('mse:{}, mae:{}'.format(mse, mae))
+        print('mae:{}, mse:{}, rmse:{}, mape:{}, mspe:{}'.format(mae, mse, rmse, mape, mspe))
         f = open("result.txt", 'a')
         f.write(setting + "  \n")
-        f.write('MAE: {}, RMSE: {}, MAPE: {}'.format(mae,rmse,mape))
+        f.write('MAE: {}, MSE: {}, RMSE: {}, MAPE: {}, MSPE: {}'.format(mae,mse,rmse,mape,mspe))
         f.write('\n')
         f.write('\n')
         f.close()
@@ -313,7 +315,9 @@ class Exp_Main(Exp_Basic):
         preds = preds.reshape(-1, preds.shape[-2], preds.shape[-1])
 
         # result save
-        folder_path = './results/' + setting + '/'
+        # folder_path = './results/' + setting + '/'
+        folder_path = '/kaggle/working/formers/results/' + setting +'/'
+
         if not os.path.exists(folder_path):
             os.makedirs(folder_path)
 
