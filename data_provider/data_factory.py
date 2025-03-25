@@ -8,6 +8,7 @@ data_dict = {
     'ETTm2': Dataset_ETT_minute,
     'custom': Dataset_Custom,
     'PEMS03_deal': Dataset_Custom,
+    'tempe20212023': Dataset_Custom,
 }
 
 
