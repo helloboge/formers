@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from utils.masking import TriangularCausalMask, ProbMask
+from formers.utils.masking import TriangularCausalMask, ProbMask
 from formers.layers.Transformer_EncDec import Decoder, DecoderLayer, Encoder, EncoderLayer, ConvLayer
 from formers.layers.SelfAttention_Family import FullAttention, ProbAttention, AttentionLayer
 from formers.layers.Embed import DataEmbedding
