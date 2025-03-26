@@ -11,7 +11,7 @@ from operator import mul
 from local_attention import LocalAttention
 from axial_positional_embedding import AxialPositionalEmbedding
 from product_key_memory import PKM
-from reformer_pytorch.reversible import ReversibleSequence
+from formers.layers.reversible import ReversibleSequence
 
 from einops import rearrange, repeat
 
