@@ -5,7 +5,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 
-from formers.layers.MTGNN_layer import *
+from layers.MTGNN_layer import *
 
 
 class Model(nn.Module):
