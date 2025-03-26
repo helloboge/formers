@@ -153,7 +153,7 @@ if args.is_training:
             torch.cuda.empty_cache()
 
         print('==============================================================================')
-        print(f'totall_MAE={np.mean(totall_MAE)}, totall_RMSE={np.mean(totall_RMSE)}, totall_MAPE={np.mean(totall_MAPE)}')
+        print(f'totall_MSE={np.mean(totall_MSE)}, totall_MAE={np.mean(totall_MAE)}, totall_RMSE={np.mean(totall_RMSE)}, totall_MAPE={np.mean(totall_MAPE)}')
 
     else:
         for ii in range(args.itr):
@@ -195,7 +195,7 @@ if args.is_training:
 
         print('==============================================================================')
         print(
-            f'totall_MAE={np.mean(totall_MAE)}, totall_RMSE={np.mean(totall_RMSE)}, totall_MAPE={np.mean(totall_MAPE)}')
+            f'totall_MSE={np.mean(totall_MSE)}, totall_MAE={np.mean(totall_MAE)}, totall_RMSE={np.mean(totall_RMSE)}, totall_MAPE={np.mean(totall_MAPE)}')
 
 else:
     ii = 0
