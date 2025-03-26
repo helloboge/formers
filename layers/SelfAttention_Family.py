@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 import math
 from math import sqrt
-from formers.utils.masking import TriangularCausalMask, ProbMask
-from formers.layers.reformer_pytorch import LSHSelfAttention
+from utils.masking import TriangularCausalMask, ProbMask
+from layers.reformer_pytorch import LSHSelfAttention
 import os
 
 
