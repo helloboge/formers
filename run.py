@@ -108,6 +108,7 @@ print('Args in experiment:')
 print(args)
 
 Exp = Exp_Main
+totall_MSE=[]
 totall_MAE=[]
 totall_RMSE=[]
 totall_MAPE=[]
@@ -139,7 +140,8 @@ if args.is_training:
             exp.mark_train(setting)
 
             print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
-            mae, rmse, mape = exp.mark_test(setting)
+            mse, mae, rmse, mape = exp.mark_test(setting)
+            totall_MSE.append(mse)
             totall_MAE.append(mae)
             totall_RMSE.append(rmse)
             totall_MAPE.append(mape)
@@ -179,7 +181,8 @@ if args.is_training:
             exp.no_mark_train(setting)
 
             print('>>>>>>>testing : {}<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<'.format(setting))
-            mae, rmse, mape = exp.no_mark_test(setting)
+            mse, mae, rmse, mape = exp.no_mark_test(setting)
+            totall_MSE.append(mse)
             totall_MAE.append(mae)
             totall_RMSE.append(rmse)
             totall_MAPE.append(mape)
